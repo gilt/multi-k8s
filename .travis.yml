@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -tag svarpe/react-test -f ./client/Dockerfile.dev ./client ## we can only use the dev for test 
+  - docker build -t svarpe/react-test -f ./client/Dockerfile.dev ./client ## we can only use the dev for test 
 
 script:
   - docker run svarpe/react-test npm test -- --coverage
