@@ -17,7 +17,7 @@ after_success:
  # login to the Docker cli
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
- # take those images and push them to the docker hub
+ # take those images and push them to the docker hub under public repository
   - docker push svarpe/multi-client-sv
   - docker push svarpe/multi-nginx-sv
   - docker push svarpe/multi-server-sv
