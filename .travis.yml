@@ -9,16 +9,19 @@ script:
   - docker run -e CI=true svarpe/react-test npm test
 
 after_success:
-  - docker build -t svarpe/multi-client-sv ./client
-  - docker build -t svarpe/multi-nginx-sv ./nginx
-  - docker build -t svarpe/multi-server-sv ./server
-  - docker build -t svarpe/multi-worker-sv ./worker
+  - docker build -t svarpe/multi-client ./client
+  - docker build -t svarpe/multi-nginx ./nginx
+  - docker build -t svarpe/multi-server ./server
+  - docker build -t svarpe/multi-worker ./worker
 
  # login to the Docker cli
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
  # take those images and push them to the docker hub under public repository
-  - docker push svarpe/multi-client-sv
-  - docker push svarpe/multi-nginx-sv
-  - docker push svarpe/multi-server-sv
-  - docker push svarpe/multi-worker-sv
+ #travis needs to be configured with docker ID and password so that images get pushed to docker hub
+  - docker push svarpe/multi-client
+  - docker push svarpe/multi-nginx
+  - docker push svarpe/multi-server
+  - docker push svarpe/multi-worker
+
+  
