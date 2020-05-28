@@ -1,4 +1,4 @@
-FROM node:alpine as builder
+FROM node:alpine
 WORKDIR '/app'
 COPY ./package.json ./
 RUN npm install
@@ -8,4 +8,4 @@ RUN npm run build ## this will create a folder inside app directory with all pro
 FROM nginx
 EXPOSE 3000
 COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
-COPY --from=builder /app/build /usr/share/nginx/html  #copy over the assets from the builder phase. 'build' is the dir created in builder phase above
+COPY --from=0 /app/build /usr/share/nginx/html  #copy over the assets from the builder phase. 'build' is the dir created in builder phase above
