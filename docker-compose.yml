@@ -21,7 +21,7 @@ services:
       dockerfile: Dockerfile.dev
       context: ./server
     volumes: 
-        - /app/node_modules      # leave folder as is no changes
+        - /app/node_modules      # leave folder 'as is' no changes to it
         - ./server:/app          #  server directory contents goto app folder of container
     environment: 
         - REDIS_HOST=redis
