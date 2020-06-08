@@ -1,0 +1,36 @@
+{
+    "AWSEBDockerrunVersion":2,
+    "containerDefinitions": [
+        {
+            "name": "client",
+            "image": "svarpe/multi-client",
+            "hostname": "client",
+            "essential": false
+        },
+        {
+            "name": "worker",
+            "image": "svarpe/multi-worker",
+            "hostname": "worker",
+            "essential": false
+        },
+        {
+            "name": "worker",
+            "image": "multi-server",
+            "hostname": "api",
+            "essential": false
+        },
+        {
+            "name": "nginx",
+            "image": "svarpe/multi-nginx",
+            "hostname": "nginx",
+            "essential": true,
+            "portMappings": [
+               {
+                 "hostPort":80,
+                 "containerPort":80
+               }
+            ],
+            "links":["client","server"]
+        }
+    ]
+}
