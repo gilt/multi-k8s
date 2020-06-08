@@ -16,8 +16,8 @@
             "memory": 128
         },
         {
-            "name": "worker",
-            "image": "multi-server",
+            "name": "server",
+            "image": "svarpe/multi-server",
             "hostname": "api",
             "essential": false,
             "memory": 128
