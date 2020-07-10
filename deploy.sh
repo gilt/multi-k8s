@@ -1,4 +1,4 @@
-docker build -t svarpe/multi-client:latest -t svarpe/multi-client:$SHA -f ./clinet/Dockerfile ./client
+docker build -t svarpe/multi-client:latest -t svarpe/multi-client:$SHA -f ./client/Dockerfile ./client
 docker build -t svarpe/multi-server:latest -t svarpe/multi-server:$SHA -f ./server/Dockerfile ./server
 docker build -t svarpe/multi-worker:latest -t svarpe/multi-worker:$SHA -f ./worker/Dockerfile ./worker
 
