@@ -22,6 +22,7 @@ before_install:
   - gcloud config set compute/zone us-east1-b
   # Name of the cluster
   - gcloud container clusters get-credentials mult-cluster
+  #provide docker credentials
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   #build test version of multi client image and then our tests inside it
   - docker build -t svarpe/react-test -f ./client/Dockerfile.dev ./client
