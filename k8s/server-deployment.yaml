@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: cygnetops/multi-server-pgfix-5-11
+          image: svarpe/multi-server:latest
           ports:
             - containerPort: 5000
           env:
