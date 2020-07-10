@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: svarpe/multi-server:latest
+          image: stephengrider/multi-server:latest
           ports:
             - containerPort: 5000
           env:
