@@ -1,7 +1,7 @@
 apiVersion: cert-manager.io/v1alpha2
 kind: Certificate
 metadata:
-  name: multik8sv-tls
+  name: multik8sv-com-tls
 spec:
   secretName: multik8sv-com
   issuerRef: 
