@@ -4,7 +4,7 @@ metadata:
   name: multik8sv-com-tls
 spec:
   secretName: multik8sv-com
-  issuerRef: 
+  issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
   commonName: multik8sv.com
@@ -15,7 +15,7 @@ spec:
     config:
       - http01:
           ingressClass: nginx
-        domains: 
+        domains:
           - multik8sv.com
           - www.multik8sv.com
 
