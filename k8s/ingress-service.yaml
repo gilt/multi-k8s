@@ -26,6 +26,7 @@ spec:
             backend:
               serviceName: server-cluster-ip-service
               servicePort: 5000
+    # serving www
     - host: www.multik8sv.com
       http:
         paths:
