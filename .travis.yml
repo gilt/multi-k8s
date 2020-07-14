@@ -21,7 +21,7 @@ before_install:
   #Add Localtion
   - gcloud config set compute/zone us-east1-b
   # Name of the cluster
-  - gcloud container clusters get-credentials mult-cluster
+  - gcloud container clusters get-credentials multi-cluster
   #provide docker credentials
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   #build test version of multi client image and then our tests inside it
