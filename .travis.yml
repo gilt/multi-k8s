@@ -17,7 +17,7 @@ before_install:
   #Authorization access to the google cloud account
   - gcloud auth activate-service-account --key-file service-account.json
   #add the project name
-  - gcloud config set project multi-k8s-282711
+  - gcloud config set project mutlik8sv
   #Add Localtion
   - gcloud config set compute/zone us-east1-b
   # Name of the cluster
@@ -30,9 +30,9 @@ before_install:
 script:
   - docker run -e CI=true svarpe/react-test npm run test
 
-deploy: 
+deploy:
   provider: script
   script: bash ./deploy.sh
   on:
-    branch: master 
+    branch: master
 

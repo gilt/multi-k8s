@@ -11,13 +11,6 @@ docker push svarpe/multi-server:$SHA
 docker push svarpe/multi-worker:$SHA
 
 kubectl apply -f k8s
-
 kubectl set image deployments/server-deployment server=svarpe/multi-server:$SHA
 kubectl set image deployments/client-deployment client=svarpe/multi-client:$SHA
 kubectl set image deployments/worker-deployment worker=svarpe/multi-worker:$SHA
-
-docker push svarpe/multi-client:$SHA
-docker push svarpe/multi-server:$SHA
-docker push svarpe/multi-worker:$SHA
-
-
